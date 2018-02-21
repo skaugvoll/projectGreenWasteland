@@ -26,8 +26,7 @@ public class FallingObject : MonoBehaviour {
 
     public bool contains(Vector2 mouse)
     {
-        return (t.position.x < mouse.x && t.position.x + sr.size.x > mouse.x &&
-            t.position.y < mouse.y && t.position.y + sr.size.y > mouse.y);
+        return false;
     }
 
 
