@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Level_assets/level1.unity
+    guid: 54ace6dad5fa3cd4e9b7b7d1ab4a75a2
+  - enabled: 1
+    path: Assets/Overworld/overworld.unity
+    guid: 276d8a1d9ec3b4b44aa892a539fbeab7
