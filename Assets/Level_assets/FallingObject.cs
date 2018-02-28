@@ -28,12 +28,18 @@ public class FallingObject : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start () {
+	void Start () { 
         maxVelocity = 4;
-        print(maxVelocity + "");
+        int angularVelocity = 50;
         sr = GetComponent<SpriteRenderer>();
         t = GetComponent<Transform>();
         rigidBody = GetComponent<Rigidbody2D>();
+        // Initial speed and angular velocity
+        int negOrPos = ((int) Random.Range(0, 2))*2 -1;
+        float vx = Random.Range(0, maxVelocity + 1) * negOrPos;
+        rigidBody.velocity = new Vector2(vx, Mathf.Sqrt(Mathf.Pow(maxVelocity,2) - Mathf.Pow(vx, 2)));
+        rigidBody.angularVelocity = negOrPos * Random.Range(0, angularVelocity);
+
 	}
 
     // Update is called once per frame
