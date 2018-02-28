@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4534238574151772}
   - component: {fileID: 212796982039000904}
+  - component: {fileID: 114068587612077124}
   m_Layer: 0
   m_Name: lid_color (2)
   m_TagString: Untagged
@@ -97,6 +98,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.4115453, y: 3.3400002}
   m_EdgeRadius: 0
+--- !u!114 &114068587612077124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1822962309548238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00caa39e21a7459418adac16b091521f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114201463747451354
 MonoBehaviour:
   m_ObjectHideFlags: 1
