@@ -38,7 +38,7 @@ public class ObjGenerator : MonoBehaviour {
         if(timeElapsed >= nextCreation)
         {
             
-            CreateObject(tags[(int)Random.Range(0, tags.Length)] + (int)Random.Range(1, 4));
+            CreateObject(tags[(int)Random.Range(0, tags.Length)], (int)Random.Range(1, 4));
             timeElapsed = 0;
             nextCreation = Random.Range(minTime, maxTime);
         }
@@ -47,15 +47,16 @@ public class ObjGenerator : MonoBehaviour {
 
 
 
-    public void CreateObject(string tag) { 
+    public void CreateObject(string tag, int num) { 
             // a prefab is need to perform the instantiation
 
             // get a random postion to instantiate the prefab - you can change this to be created at a fied point if desired
             Vector3 position = new Vector3(Random.Range(minX + 0.5f, maxX - 0.5f), Random.Range(minY + 0.5f, maxY - 0.5f));
 
-            // instantiate the object
-            GameObject go = (GameObject)Instantiate(Resources.Load(tag), position, Quaternion.identity);
-            createdObjects.Add(go);
+        // instantiate the object
+        GameObject go = (GameObject)Instantiate(Resources.Load(tag + num), position, Quaternion.identity);
+        go.tag = tag.ToLower();
+        createdObjects.Add(go);
         
 
     }
