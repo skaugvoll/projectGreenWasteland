@@ -19,7 +19,8 @@ public class Scorecounter : MonoBehaviour
 
     public void updateScore(int score) {
         count += score;
-        print("Poengsum elns");
+        GameObject.Find("ScoreText").GetComponent<Text>().text = count + "";
+
     }
 
     

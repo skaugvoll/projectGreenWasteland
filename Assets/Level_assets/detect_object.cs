@@ -12,7 +12,7 @@ public class detect_object : MonoBehaviour {
         if (col.gameObject.tag == tag)
         {
             Destroy(col.gameObject);
-            GameObject.Find("Main Camera)").GetComponent<Scorecounter>().updateScore(1);
+            GameObject.Find("Main Camera").GetComponent<Scorecounter>().updateScore(1);
                 
 
             

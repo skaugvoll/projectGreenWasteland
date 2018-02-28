@@ -21,6 +21,8 @@ public class ObjGenerator : MonoBehaviour {
     private float minTime = 500;
     private float nextCreation;
     private float timeElapsed = 0;
+    private float gameDuration = 30*1000;
+    private float gameEnd;
 
     private bool generateObjects = true;
 
@@ -28,6 +30,7 @@ public class ObjGenerator : MonoBehaviour {
     // Use this for initialization
     void Start () {
         nextCreation = Time.time * 1000 + Random.Range(minTime, maxTime);
+        gameEnd = Time.time * 1000 + gameDuration;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +44,11 @@ public class ObjGenerator : MonoBehaviour {
             CreateObject(tags[(int)Random.Range(0, tags.Length)], (int)Random.Range(1, 4));
             timeElapsed = 0;
             nextCreation = Random.Range(minTime, maxTime);
+        }
+
+        if(Time.time >= gameEnd)
+        {
+            // End game
         }
         
 	}
