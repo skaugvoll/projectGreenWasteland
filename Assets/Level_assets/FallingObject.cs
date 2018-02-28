@@ -9,6 +9,17 @@ public class FallingObject : MonoBehaviour {
     private float incrementor = 0.1f;
     private bool mouseDown = false;
 
+    private string type;
+
+    private float minRot = 0.1f;
+    private float maxRot = 1;
+
+
+    public FallingObject(string type)
+    {
+        this.type = type;
+    }
+
 	// Use this for initialization
 	void Start () {
         sr = GetComponent<SpriteRenderer>();
