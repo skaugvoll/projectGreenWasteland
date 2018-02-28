@@ -7,27 +7,53 @@ public class FallingObject : MonoBehaviour {
     public SpriteRenderer sr;
     public Transform t;
     private float incrementor = 0.1f;
+    private bool mouseDown = false;
+
 	// Use this for initialization
 	void Start () {
         sr = GetComponent<SpriteRenderer>();
         t = GetComponent<Transform>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (contains(Input.mousePosition))
-        {
-            print("OIOIOI");
-        }else
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!mouseDown)
         {
             t.position = new Vector3(t.position.x, t.position.y - incrementor);
         }
-	}
+    }
 
-    public bool contains(Vector2 mouse)
+    private void OnMouseDown()
     {
-        return false;
+        mouseDown = true;
+    }
+
+    private void OnMouseUp()
+    {
+        mouseDown = false;
+    }
+
+
+    private void OnMouseDrag()
+    {
+        Vector3 mousePositionInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float x = mousePositionInWorldPoint.x;
+        float y = mousePositionInWorldPoint.y;
+        t.position = new Vector3(x, y);
+    }
+
+
+    /*
+     * Removes gameobject when outside of screen to avoid memory buildup
+     */ 
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 
 
 }
+
+
+
