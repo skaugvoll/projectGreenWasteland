@@ -8,8 +8,8 @@ public class ObjGenerator : MonoBehaviour {
 
     public List<GameObject> createdObjects = new List<GameObject>();
 
-    private string[] tags = { "Plast", "Elektrisk", "Papp" };
-
+    public string[] tags = { "Plast", "Papp" };
+    
 
     private float minY = 207.78f;
     private float maxY = 207.33f;
@@ -38,7 +38,7 @@ public class ObjGenerator : MonoBehaviour {
         minX = t.position.x;
         maxX = minX + r.bounds.size.x;
         maxY = minY + r.bounds.size.y;
-
+        
 
 
         nextCreation = Time.time * 1000 + Random.Range(minTime, maxTime);

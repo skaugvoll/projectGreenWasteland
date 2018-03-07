@@ -48,4 +48,18 @@ public static class Scorecounter
         score = 0;
     }
 
+    public static void setR1(int r1)
+    {
+        rating1 = r1;
+    }
+    public static void setR2(int r2)
+    {
+        rating2 = r2;
+    }
+    public static void setR3(int r3)
+    {
+        rating3 = r3;
+    }
+
+
 }

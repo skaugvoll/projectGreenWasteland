@@ -10,13 +10,15 @@ public class PauseController : MonoBehaviour {
     private GameObject pauseOverlay;
 
 
-    private float gameDuration = 10 *1000;  // Time in milliseconds
+    public float gameDuration = 10 *1000;  // Time in milliseconds
     private float timeElapsed;
     private bool haltUpdate = false;
 
 	// Use this for initialization
 	void Start () {
         timeElapsed = 0;
+        Time.timeScale = 1;
+        Scorecounter.reset();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +26,7 @@ public class PauseController : MonoBehaviour {
         if (haltUpdate) return;
 
         timeElapsed += Time.deltaTime * 1000;
+        GameObject.Find("Radial").GetComponent<Image>().fillAmount = 1 - timeElapsed/gameDuration;
         setTimerText("" + (int)(gameDuration - timeElapsed)/1000);
 
 
