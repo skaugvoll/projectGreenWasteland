@@ -27,8 +27,20 @@ public class ObjGenerator : MonoBehaviour {
     private bool generateObjects = true;
 
 
+
+
     // Use this for initialization
     void Start () {
+        // Generated bounds within shape
+        Transform t = GetComponent<Transform>();
+        SpriteRenderer r = GetComponent<SpriteRenderer>();
+        minY = t.position.y;
+        minX = t.position.x;
+        maxX = minX + r.bounds.size.x;
+        maxY = minY + r.bounds.size.y;
+
+
+
         nextCreation = Time.time * 1000 + Random.Range(minTime, maxTime);
         gameEnd = Time.time * 1000 + gameDuration;
 	}
