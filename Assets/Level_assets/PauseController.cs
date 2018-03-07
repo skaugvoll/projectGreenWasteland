@@ -10,7 +10,7 @@ public class PauseController : MonoBehaviour {
     private GameObject pauseOverlay;
 
 
-    private float gameDuration = 30 *1000;  // Time in milliseconds
+    private float gameDuration = 10 *1000;  // Time in milliseconds
     private float timeElapsed;
     private bool haltUpdate = false;
 
@@ -34,11 +34,28 @@ public class PauseController : MonoBehaviour {
             Time.timeScale = 0; //temp
             GameObject.Find("PauseButton").GetComponent<Button>().interactable = false; // Disable UI buttons
             Add_scene("ResultScene");
+
+            // Calculate score
+            int rating = Scorecounter.getRating();
+            int score = Scorecounter.getScore();
+
+            GameObject[] goa = SceneManager.GetSceneByName("ResultScene").GetRootGameObjects();
+            foreach(GameObject go in goa)
+            {
+                print("test");
+                if(go.name == "ResultsCanvas")
+                {
+                    print("HYPE");
+                    go.GetComponent<ResultsRating>().setRating(score, rating);
+                }
+            }
+            
+            
         }
 
 
     }
-
+    
 
     public void setTimerText(string text)
     {
