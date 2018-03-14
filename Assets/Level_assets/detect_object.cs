@@ -13,11 +13,17 @@ public class detect_object : MonoBehaviour {
         {
             Destroy(col.gameObject);
             Scorecounter.updateScore(1);
+
                 
 
             
            
 
+        }
+        if (col.gameObject.tag != tag)
+        {
+            Destroy(col.gameObject);
+            Scorecounter.updateScore(-1);
         }
     }
 }
