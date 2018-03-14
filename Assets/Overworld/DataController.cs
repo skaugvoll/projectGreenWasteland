@@ -47,7 +47,7 @@ public class DataController : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("Cannot load game data!");
+            Debug.Log("Cannot load game data!");
         }
     }
 
@@ -89,6 +89,11 @@ public class DataController : MonoBehaviour {
     public int getLatestUnlockedStage()
     {
         return playerData.lastUnlockedStage;
+    }
+
+    public void addEnergy(int energy)
+    {
+        playerData.energy += energy;
     }
 
 
