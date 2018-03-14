@@ -181,7 +181,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cf6cc03448aebfb4daf0cf5a0173e73d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -607,6 +607,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createdObjects: []
+  tags:
+  - Plast
+  - Papp
 --- !u!81 &377589667
 AudioListener:
   m_ObjectHideFlags: 0
@@ -645,9 +648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3183c8e835f42b4fb5bde78b5b91735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rating1: 5
-  rating2: 20
-  rating3: 25
 --- !u!1 &410084110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,6 +2011,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createdObjects: []
+  tags:
+  - Plast
+  - Papp
 --- !u!212 &1471921972
 SpriteRenderer:
   m_ObjectHideFlags: 0
