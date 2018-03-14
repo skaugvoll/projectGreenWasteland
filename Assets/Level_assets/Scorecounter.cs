@@ -16,7 +16,6 @@ public static class Scorecounter
 
 
     public static void updateScore(int s) {
-        Debug.Log("Score + " + s + " for a total of " + score + " points");
         score += s;
         GameObject.Find("ScoreText").GetComponent<Text>().text = score + "";
 
@@ -24,7 +23,6 @@ public static class Scorecounter
 
     public static int getScore()
     {
-        Debug.Log("Score: " + score);
         return score;
     }
 

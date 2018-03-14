@@ -8,7 +8,7 @@ public class ObjGenerator : MonoBehaviour {
 
     public List<GameObject> createdObjects = new List<GameObject>();
 
-    public string[] tags = { "Plast", "Papp" };
+    public string[] tags = { "Plast", "Papp", "Elektrisk" };
     
 
     private float minY = 207.78f;
@@ -17,15 +17,12 @@ public class ObjGenerator : MonoBehaviour {
     private float maxX = 99.29f;
 
     // In milliseconds
-    private float maxTime = 1500;
-    private float minTime = 500;
+    public float maxTime = 1500;
+    public float minTime = 500;
     private float nextCreation;
-    private float timeElapsed = 0;
-    private float gameDuration = 30*1000;
-    private float gameEnd;
+    public float timeElapsed = 0;
 
     private bool generateObjects = true;
-
 
 
 
@@ -38,29 +35,22 @@ public class ObjGenerator : MonoBehaviour {
         minX = t.position.x;
         maxX = minX + r.bounds.size.x;
         maxY = minY + r.bounds.size.y;
-        
+        generateObjects = true;
 
-
-        nextCreation = Time.time * 1000 + Random.Range(minTime, maxTime);
-        gameEnd = Time.time * 1000 + gameDuration;
+        nextCreation = Random.Range(minTime, maxTime);
+        print("nextCreation: " + nextCreation);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        timeElapsed += Time.deltaTime * 1000;
         if (!generateObjects)
             return;
-        timeElapsed += Time.deltaTime * 1000;
-        if(timeElapsed >= nextCreation)
-        {
-            
+        if(timeElapsed >= nextCreation) {
+            print("timelapsed >= nextCreation");
             CreateObject(tags[(int)Random.Range(0, tags.Length)], (int)Random.Range(1, 4));
             timeElapsed = 0;
             nextCreation = Random.Range(minTime, maxTime);
-        }
-
-        if(Time.time >= gameEnd)
-        {
-            // End game
         }
         
 	}
@@ -71,12 +61,13 @@ public class ObjGenerator : MonoBehaviour {
             // a prefab is need to perform the instantiation
 
             // get a random postion to instantiate the prefab - you can change this to be created at a fied point if desired
-            Vector3 position = new Vector3(Random.Range(minX + 0.5f, maxX - 0.5f), Random.Range(minY + 0.5f, maxY - 0.5f));
+        Vector3 position = new Vector3(Random.Range(minX + 0.5f, maxX - 0.5f), Random.Range(minY + 0.5f, maxY - 0.5f));
 
         // instantiate the object
         GameObject go = (GameObject)Instantiate(Resources.Load(tag + num), position, Quaternion.identity);
         go.tag = tag.ToLower();
         createdObjects.Add(go);
+        print("Created an object");
         
 
     }
