@@ -14,11 +14,14 @@ public class OverworldController : MonoBehaviour {
         energy = dataController.getEnergy();
         GameObject.Find("EnergyAmount").GetComponent<Text>().text = energy + "";
 
-        for (int i = 1; i <= dataController.getLatestUnlockedStage(); i++)
+        for (int i = 1; i <= dataController.getLatestUnlockedStage()+1; i++)
         {
             GameObject levelButton = GameObject.Find("Button" + i);
             levelButton.GetComponent<Button>().interactable = true;
         }
+
+        FindObjectOfType<DataController>().SaveGameData();
+
     }
 	
 	// Update is called once per frame

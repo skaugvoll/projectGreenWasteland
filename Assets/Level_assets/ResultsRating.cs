@@ -29,7 +29,9 @@ public class ResultsRating : MonoBehaviour {
         FindObjectOfType<DataController>().addEnergy(rating);
         string numbers = Regex.Replace(SceneManager.GetActiveScene().name, "[^0-9]", "");
     
+
         int latestLvl = int.Parse(numbers);
+        print(latestLvl);
         FindObjectOfType<DataController>().completedLevel(latestLvl);
 
 

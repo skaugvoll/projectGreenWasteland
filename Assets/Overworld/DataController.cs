@@ -25,7 +25,7 @@ public class DataController : MonoBehaviour {
         //LoadPlayerProgress();
         DontDestroyOnLoad(this);
         SceneManager.LoadScene("overworld");
-        SaveGameData();
+        
 
 
     }
@@ -69,7 +69,7 @@ public class DataController : MonoBehaviour {
         }
         if (PlayerPrefs.HasKey("lastUnlockedStage"))
         {
-            playerData.lastUnlockedStage = PlayerPrefs.GetInt("lastUnlockedStage");
+            playerData.lastCleared = PlayerPrefs.GetInt("lastUnlockedStage");
         }
         if (PlayerPrefs.HasKey("energy"))
         { 
@@ -83,11 +83,11 @@ public class DataController : MonoBehaviour {
     {
         // Save the value playerProgress.highestScore to PlayerPrefs, with a key of "highestScore"
         PlayerPrefs.SetInt("energyReceivedTotal", playerData.energyReceivedTotal);
-        PlayerPrefs.SetInt("lastUnlockedStage", playerData.lastUnlockedStage);
+        PlayerPrefs.SetInt("lastUnlockedStage", playerData.lastCleared);
         PlayerPrefs.SetInt("energy", playerData.energy);
     }
 
-    private void SaveGameData()
+    public void SaveGameData()
     {
 
         string dataAsJson = JsonUtility.ToJson(playerData);
@@ -105,7 +105,7 @@ public class DataController : MonoBehaviour {
 
     public int getLatestUnlockedStage()
     {
-        return playerData.lastUnlockedStage;
+        return playerData.lastCleared;
     }
 
     public void addEnergy(int energy)
@@ -115,8 +115,11 @@ public class DataController : MonoBehaviour {
 
     public void completedLevel(int level)
     {
-        if(level >= playerData.lastUnlockedStage)    // Only increase latest if u reached a later level than recorded
-            playerData.lastUnlockedStage = level+1;
+        if (level > playerData.lastCleared)
+        {    // Only increase latest if u reached a later level than recorded
+            print("lagrer lastCleared");
+            playerData.lastCleared = level;
+        }
     }
 
 
