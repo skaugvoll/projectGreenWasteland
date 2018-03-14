@@ -3100,6 +3100,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1006279238239532, guid: 2a7504c4fe19a0042990625136a6a268, type: 2}
+      propertyPath: m_TagString
+      value: plast
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a7504c4fe19a0042990625136a6a268, type: 2}
   m_IsPrefabParent: 0
