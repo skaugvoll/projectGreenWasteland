@@ -25,21 +25,30 @@ public class MovingObject : MonoBehaviour {
     }
 
     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         if (lessenImpact == 0) return;
-        
-        if(sinMoveY) {
-            t.position = new Vector2(t.position.x + incrementX, t.position.y + Mathf.Sin(Time.time * sinIncY) / (Mathf.PI * lessenImpact) + incrementY);
-        } else
+
+        if (sinMoveY && !sinMoveX)
         {
-            if(sinMoveX)
+            t.position = new Vector2(t.position.x + incrementX, t.position.y + Mathf.Sin(Time.time * sinIncY) / (Mathf.PI * lessenImpact) + incrementY);
+        }
+        else
+        {
+            if (sinMoveX)
             {
                 t.position = new Vector2(t.position.x + Mathf.Sin(Time.time * sinIncX) / (Mathf.PI * lessenImpact) + incrementX, t.position.y + incrementY);
-            } else
+            }
+            else
             {
                 t.position = new Vector2(t.position.x + incrementX, t.position.y + incrementY);
             }
+        }
+        if (sinMoveY && sinMoveX)
+        {
+            t.position = new Vector2(t.position.x + Mathf.Sin(Time.time * sinIncX) / (Mathf.PI * lessenImpact) + incrementX,
+                 t.position.y + Mathf.Cos(Time.time * sinIncY) / (Mathf.PI * lessenImpact) + incrementY);
         }
     }
 
