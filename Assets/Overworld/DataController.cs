@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 /**
  * Big thanks to unity tutorial at https://unity3d.com/learn/tutorials/topics/scripting/high-score-playerprefs
  * 
@@ -11,21 +12,23 @@ public class DataController : MonoBehaviour {
 
 
     private PlayerData playerData;
-    private string gameDataFileName = "pgw.json"; // 
-
+    private string gameDataFileName = "data.json"; // 
+    private string gameDataProjectFilePath = "/StreamingAssets/data.json";
 
 
     // Use this for initialization
     void Start () {
 
+
         LoadGameData();
 
-        LoadPlayerProgress();
+        //LoadPlayerProgress();
+        DontDestroyOnLoad(this);
+        SceneManager.LoadScene("overworld");
+        SaveGameData();
 
 
     }
-	
-
 
 
 
@@ -34,20 +37,23 @@ public class DataController : MonoBehaviour {
         // Path.Combine combines strings into a file path
         // Application.StreamingAssets points to Assets/StreamingAssets in the Editor, and the StreamingAssets folder in a build
         string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
-
         if (File.Exists(filePath))
         {
+            print("Found file");
             // Read the json from the file into a string
             string dataAsJson = File.ReadAllText(filePath);
             // Pass the json to JsonUtility, and tell it to create a GameData object from it
-            PlayerData loadedData = JsonUtility.FromJson<PlayerData>(dataAsJson);
-
+            playerData = JsonUtility.FromJson<PlayerData>(dataAsJson);
+            
             // Retrieve the allRoundData property of loadedData
            // allRoundData = loadedData.allRoundData;
         }
         else
         {
-            Debug.Log("Cannot load game data!");
+            Debug.Log("Cannot load game data! Creating new File");
+            playerData = new PlayerData();
+            SavePlayerData();
+            SaveGameData();
         }
     }
 
@@ -66,8 +72,9 @@ public class DataController : MonoBehaviour {
             playerData.lastUnlockedStage = PlayerPrefs.GetInt("lastUnlockedStage");
         }
         if (PlayerPrefs.HasKey("energy"))
-        {
+        { 
             playerData.energy = PlayerPrefs.GetInt("energy");
+            print("INDEED: " + playerData.energy);
         }
 
     }
@@ -78,6 +85,16 @@ public class DataController : MonoBehaviour {
         PlayerPrefs.SetInt("energyReceivedTotal", playerData.energyReceivedTotal);
         PlayerPrefs.SetInt("lastUnlockedStage", playerData.lastUnlockedStage);
         PlayerPrefs.SetInt("energy", playerData.energy);
+    }
+
+    private void SaveGameData()
+    {
+
+        string dataAsJson = JsonUtility.ToJson(playerData);
+
+        string filePath = Application.dataPath + gameDataProjectFilePath;
+        File.WriteAllText(filePath, dataAsJson);
+
     }
 
 
@@ -94,6 +111,12 @@ public class DataController : MonoBehaviour {
     public void addEnergy(int energy)
     {
         playerData.energy += energy;
+    }
+
+    public void completedLevel(int level)
+    {
+        if(level >= playerData.lastUnlockedStage)    // Only increase latest if u reached a later level than recorded
+            playerData.lastUnlockedStage = level+1;
     }
 
 
