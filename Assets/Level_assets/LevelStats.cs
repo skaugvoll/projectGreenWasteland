@@ -9,15 +9,4 @@ public class LevelStats : MonoBehaviour {
     public int rating3 = 25;
 
 
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

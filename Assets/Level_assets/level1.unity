@@ -931,7 +931,8 @@ MonoBehaviour:
   createdObjects: []
   tags:
   - Plast
-  - Papp
+  - papp
+  - elektrisk
   maxTime: 1500
   minTime: 500
   timeElapsed: 0
