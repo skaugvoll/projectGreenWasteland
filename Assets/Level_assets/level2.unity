@@ -2057,6 +2057,7 @@ MonoBehaviour:
   tags:
   - Plast
   - Papp
+  - Elektrisk
   maxTime: 1500
   minTime: 500
   timeElapsed: 0
