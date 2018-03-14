@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public class ResultsRating : MonoBehaviour {
 
@@ -17,11 +19,20 @@ public class ResultsRating : MonoBehaviour {
         GameObject.Find("NumericScore").GetComponent<Text>().text = score + "";
 
         if (rating >= 1)
-            GameObject.Find("R1").GetComponent<Text>().enabled = true;
+            GameObject.Find("R1").GetComponent<Image>().enabled = true;
         if (rating >= 2)
-            GameObject.Find("R2").GetComponent<Text>().enabled = true;
+            GameObject.Find("R2").GetComponent<Image>().enabled = true;
         if (rating == 3)
-            GameObject.Find("R3").GetComponent<Text>().enabled = true;
+            GameObject.Find("R3").GetComponent<Image>().enabled = true;
+
+
+        FindObjectOfType<DataController>().addEnergy(rating);
+        string numbers = Regex.Replace(SceneManager.GetActiveScene().name, "[^0-9]", "");
+    
+
+        int latestLvl = int.Parse(numbers);
+        print(latestLvl);
+        FindObjectOfType<DataController>().completedLevel(latestLvl);
 
 
     }
