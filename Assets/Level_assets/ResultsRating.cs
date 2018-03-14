@@ -17,11 +17,11 @@ public class ResultsRating : MonoBehaviour {
         GameObject.Find("NumericScore").GetComponent<Text>().text = score + "";
 
         if (rating >= 1)
-            GameObject.Find("R1").GetComponent<Text>().enabled = true;
+            GameObject.Find("R1").GetComponent<Image>().enabled = true;
         if (rating >= 2)
-            GameObject.Find("R2").GetComponent<Text>().enabled = true;
+            GameObject.Find("R2").GetComponent<Image>().enabled = true;
         if (rating == 3)
-            GameObject.Find("R3").GetComponent<Text>().enabled = true;
+            GameObject.Find("R3").GetComponent<Image>().enabled = true;
 
 
     }
