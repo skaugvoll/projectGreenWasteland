@@ -8,6 +8,7 @@ TagManager:
   - papp
   - elektrisk
   - glass
+  - mat
   layers:
   - Default
   - TransparentFX
