@@ -703,6 +703,9 @@ MonoBehaviour:
   tags:
   - Plast
   - Papp
+  maxTime: 1500
+  minTime: 500
+  timeElapsed: 0
 --- !u!212 &217999983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -929,6 +932,9 @@ MonoBehaviour:
   tags:
   - Plast
   - Papp
+  maxTime: 1500
+  minTime: 500
+  timeElapsed: 0
 --- !u!114 &228939502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2292,7 +2298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 93.68, y: 207.59}
+  m_AnchoredPosition: {x: 94.43, y: 210.77}
   m_SizeDelta: {x: 202, y: 404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1670399849
