@@ -8,7 +8,7 @@ public class ObjGenerator : MonoBehaviour {
 
     public List<GameObject> createdObjects = new List<GameObject>();
 
-    public string[] tags = { "Plast", "Papp", "Elektrisk" };
+    public string[] tags = { "Plast", "Papp", "Elektrisk", "mat" };
     
 
     private float minY = 207.78f;
@@ -48,6 +48,7 @@ public class ObjGenerator : MonoBehaviour {
             return;
         if(timeElapsed >= nextCreation) {
             print("timelapsed >= nextCreation");
+            print(tags.Length);
             CreateObject(tags[(int)Random.Range(0, tags.Length)], (int)Random.Range(1, 4));
             timeElapsed = 0;
             nextCreation = Random.Range(minTime, maxTime);
