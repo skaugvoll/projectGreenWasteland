@@ -68,16 +68,22 @@ public class PauseController : MonoBehaviour {
 
     public void pauseGame()
     {
-        if (isPaused) return;
+        if (FindObjectOfType<DataController>().isPaused) return;
 
-        isPaused = true;
+        FindObjectOfType<DataController>().isPaused = true;
         Time.timeScale = 0;
         Vector2 position = new Vector2(95.62f, 203.59f);
-        pauseOverlay = (GameObject) Instantiate(Resources.Load("PauseOverlay"), position, Quaternion.identity);
+
+        SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+
+        /**pauseOverlay = (GameObject) Instantiate(Resources.Load("PauseOverlay"), position, Quaternion.identity);
         pauseOverlay.transform.parent = GameObject.Find("Canvas").transform;
-        GameObject.Find("Resume").GetComponent<Button>().onClick.AddListener(() => onResumeButton());
+        
+        Button b = GameObject.Find("Resume").GetComponent<Button>();
+        b.onClick.AddListener(() => onResumeButton());
         GameObject.Find("Quit").GetComponent<Button>().onClick.AddListener(() => onQuitButton());
-        // ADD overlay
+        // ADD overlay 
+        */
     }
 
     public void resumeGame()

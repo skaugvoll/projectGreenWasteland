@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class DataController : MonoBehaviour {
 
 
+    public bool isPaused = false;
+
     private PlayerData playerData;
     private string gameDataFileName = "data.json"; // 
     private string gameDataProjectFilePath = "/StreamingAssets/data.json";
