@@ -31,9 +31,15 @@ public class ResultsRating : MonoBehaviour {
     
 
         int latestLvl = int.Parse(numbers);
-        print(latestLvl);
-        FindObjectOfType<DataController>().completedLevel(latestLvl);
-
+        print(latestLvl + ": rating " + rating);
+        if (rating >= 1)
+        {
+            bool newStageUnlocked = FindObjectOfType<DataController>().completedLevel(latestLvl); // request highest stage, and set if it is
+            if (newStageUnlocked && rating >= 1)
+            {
+                GameObject.Find("NewStageUnlocked").GetComponent<Text>().enabled = true;
+            }
+        }
 
     }
 
