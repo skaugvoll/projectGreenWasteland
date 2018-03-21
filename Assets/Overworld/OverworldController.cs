@@ -17,7 +17,15 @@ public class OverworldController : MonoBehaviour {
         for (int i = 1; i <= dataController.getLatestUnlockedStage()+1; i++)
         {
             GameObject levelButton = GameObject.Find("Button" + i);
-            levelButton.GetComponent<Button>().interactable = true;
+            if (i <= 7)
+                levelButton.GetComponent<Button>().interactable = true;
+        }
+
+        int j = dataController.getLatestUnlockedStage()+1;
+        if (j <= 7)
+        {
+            ParticleSystem ps = GameObject.Find("levelGlow" + j).GetComponent<ParticleSystem>();
+            ps.Play();
         }
 
         FindObjectOfType<DataController>().SaveGameData();

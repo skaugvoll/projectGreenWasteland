@@ -66,9 +66,12 @@ public class ObjGenerator : MonoBehaviour {
 
         // instantiate the object
         GameObject go = (GameObject)Instantiate(Resources.Load(tag + num), position, Quaternion.identity);
-        go.tag = tag.ToLower();
-        createdObjects.Add(go);
-        print("Created an object");
+        if (!tag.ToLower().Equals("metall"))
+        {
+            go.tag = tag.ToLower();
+            createdObjects.Add(go);
+            print("Created an object");
+        }
         
 
     }
