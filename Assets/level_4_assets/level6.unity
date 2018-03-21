@@ -2212,7 +2212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd921ec97f488f49aa0747b3701e9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDuration: 10000
+  gameDuration: 35000
 --- !u!114 &1031834274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2224,9 +2224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ac0ce40e4d33a47801d47cf9d4a285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rating1: 5
+  rating1: 12
   rating2: 20
-  rating3: 25
+  rating3: 28
 --- !u!114 &1031834275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,7 +2412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100.78, y: 204.12}
+  m_AnchoredPosition: {x: 100.84, y: 201.91}
   m_SizeDelta: {x: 202, y: 404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1094716247

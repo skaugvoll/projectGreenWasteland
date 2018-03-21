@@ -115,13 +115,15 @@ public class DataController : MonoBehaviour {
         playerData.energy += energy;
     }
 
-    public void completedLevel(int level)
+    public bool completedLevel(int level)
     {
         if (level > playerData.lastCleared)
         {    // Only increase latest if u reached a later level than recorded
             print("lagrer lastCleared");
             playerData.lastCleared = level;
+            return true;
         }
+        return false;
     }
 
 

@@ -9,4 +9,9 @@ public class LevelStats : MonoBehaviour {
     public int rating3 = 25;
 
 
+    public void Start()
+    {
+        Scorecounter.setRatingRequirements(rating1, rating2, rating3);
+    }
+
 }

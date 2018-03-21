@@ -2175,9 +2175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ac0ce40e4d33a47801d47cf9d4a285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rating1: 5
-  rating2: 20
-  rating3: 25
+  rating1: 14
+  rating2: 27
+  rating3: 35
 --- !u!114 &1840917014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   - Papp
   - Elektrisk
   - mat
-  maxTime: 1500
+  maxTime: 1100
   minTime: 500
   timeElapsed: 0
 --- !u!81 &1840917015

@@ -60,4 +60,12 @@ public static class Scorecounter
     }
 
 
+
+    public static void setRatingRequirements(int r1, int r2, int r3)
+    {
+        rating1 = r1;
+        rating2 = r2;
+        rating3 = r3;
+    }
+
 }
