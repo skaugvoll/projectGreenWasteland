@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class changeTextOnClick : MonoBehaviour {
 
 	// Use this for initialization
-	public Button button;
+	private Button btn;
 
 	void Start () {
-		// button = GetComponent<Button>();
-		// button.onClick.AddListener(ButtonOnClick);
+		// btn = this.GetComponent<Button>();
+		// btn.onClick.AddListener(ButtonOnClick);
 
 	}
 
@@ -22,5 +22,9 @@ public class changeTextOnClick : MonoBehaviour {
 	// this happens everytime the buttion is clicked
 	public void ButtonOnClick() {
 		Debug.Log("Clicked");
+	}
+
+	public void sigvesFunction(){
+		Debug.Log("FÅKK OFF");
 	}
 }
