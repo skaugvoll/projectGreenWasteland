@@ -5,12 +5,63 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Level_assets/level1.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/54ace6dad5fa3cd4e9b7b7d1ab4a75a2
     guid: 54ace6dad5fa3cd4e9b7b7d1ab4a75a2
   - enabled: 1
-    path: Assets/Overworld/overworld.unity
+    path: Assets/Scenes/data.unity
+    guid: 95c0af0ca37ca0d408be7feb8eba89ae
+  - enabled: 1
+    path: Assets/Scenes/overworld.unity
     guid: 276d8a1d9ec3b4b44aa892a539fbeab7
   - enabled: 1
-    path: Assets/Level_assets/level2.unity
+    path: Assets/Scenes/level1.unity
     guid: f38a8592c31fbdc4f8b54e06fe2411b4
+  - enabled: 1
+    path: Assets/Scenes/ResultScene.unity
+    guid: 32b22ef1418a3384bb3ffdf2a734525c
+  - enabled: 1
+    path: Assets/Scenes/PauseScene.unity
+    guid: d1a4e506a48eb044a9e837bad3fdfb59
+  - enabled: 1
+    path: Assets/Scenes/level5.unity
+    guid: 7d66bf853a25dd240af65555e7a6de9b
+  - enabled: 1
+    path: Assets/Scenes/level3.unity
+    guid: f6255c3a35766f2468a2bfe52a3ced62
+  - enabled: 1
+    path: Assets/Scenes/level7.unity
+    guid: 9fd1803262188734381f5c9bc9b3ec29
+  - enabled: 1
+    path: Assets/Scenes/level6.unity
+    guid: 4d09f6bfdbd49bd44bd0e963ae8ea39b
+  - enabled: 1
+    path: Assets/Scenes/level2.unity
+    guid: a4f5938d5031d7e4381908f10760a89b
+  - enabled: 1
+    path: Assets/Scenes/level4.unity
+    guid: 488fe57874f8afb449064b6c9e4f3964
+  - enabled: 1
+    path: Assets/Scenes/HandbokScene.unity
+    guid: 6067be2e7cccd4145891f6fe10940087
+  - enabled: 1
+    path: Assets/Scenes/HB1.unity
+    guid: 3b299f1577c544b4abf04ddef248ec90
+  - enabled: 1
+    path: Assets/Scenes/HB2.unity
+    guid: 29d0a156cf3032943be6d0b2cbc6162f
+  - enabled: 1
+    path: Assets/Scenes/HB3.unity
+    guid: 738430cf352d3e141b8c059959a93777
+  - enabled: 1
+    path: Assets/Scenes/HB4.unity
+    guid: d5fe480fc10a1354ca90f80660b74e38
+  - enabled: 1
+    path: Assets/Scenes/HB5.unity
+    guid: 763e50a631fd62a45ad5f292af2e19df
+  - enabled: 1
+    path: Assets/Scenes/HB6.unity
+    guid: d50e1e2ee5cf5f54291ec79ebaa74dd9
+  - enabled: 1
+    path: Assets/Scenes/HB7.unity
+    guid: c1b7b7bc75d9b8f46b8f8f1cd30bc849

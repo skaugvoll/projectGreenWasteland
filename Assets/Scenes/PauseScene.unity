@@ -296,7 +296,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d8f506e847d4bcc468908a065744d42c,
+      objectReference: {fileID: 21300000, guid: 86bd478871ca0b9448494e8ad5eb1260,
         type: 3}
     - target: {fileID: 4937356842822778, guid: 9ac9bb6d0c564be4693fb1f22c248c1e, type: 2}
       propertyPath: m_LocalScale.x
@@ -413,6 +413,21 @@ Prefab:
         type: 2}
       propertyPath: m_FillOrigin
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212095291194427202, guid: 9ac9bb6d0c564be4693fb1f22c248c1e,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 8.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 212095291194427202, guid: 9ac9bb6d0c564be4693fb1f22c248c1e,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 12.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 212095291194427202, guid: 9ac9bb6d0c564be4693fb1f22c248c1e,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ac9bb6d0c564be4693fb1f22c248c1e, type: 2}
