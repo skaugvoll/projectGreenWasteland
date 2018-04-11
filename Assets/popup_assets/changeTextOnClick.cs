@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class changeTextOnClick : MonoBehaviour {
 
 	// Use this for initialization
-	private Button btn;
-
 	void Start () {
-		// btn = this.GetComponent<Button>();
-		// btn.onClick.AddListener(ButtonOnClick);
 
 	}
 
@@ -21,10 +18,14 @@ public class changeTextOnClick : MonoBehaviour {
 
 	// this happens everytime the buttion is clicked
 	public void ButtonOnClick() {
-		Debug.Log("Clicked");
+		if(GameObject.Find("msg_I_2").GetComponent<Text>().enabled == true){
+			// SceneManager.LoadScene(scene);
+			Debug.Log("Should now close this popup and display overworld");
+		}
+		else {
+			GameObject.Find("msg_I_1").GetComponent<Text>().enabled = false;
+			GameObject.Find("msg_I_2").GetComponent<Text>().enabled = true;
+		}
 	}
 
-	public void sigvesFunction(){
-		Debug.Log("FÅKK OFF");
-	}
 }
