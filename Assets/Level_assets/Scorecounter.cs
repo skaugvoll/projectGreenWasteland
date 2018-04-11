@@ -16,6 +16,7 @@ public static class Scorecounter
 
 
     public static void updateScore(int s) {
+        if (score == 0 &&  s <= 0) return;
         score += s;
         GameObject.Find("ScoreText").GetComponent<Text>().text = score + "";
 
@@ -47,7 +48,7 @@ public static class Scorecounter
     }
 
     public static void setR1(int r1)
-    {
+    { 
         rating1 = r1;
     }
     public static void setR2(int r2)

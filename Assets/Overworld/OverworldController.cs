@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OverworldController : MonoBehaviour {
 
@@ -27,6 +28,12 @@ public class OverworldController : MonoBehaviour {
             ParticleSystem ps = GameObject.Find("levelGlow" + j).GetComponent<ParticleSystem>();
             ps.Play();
         }
+
+        if(FindObjectOfType<DataController>().isFirstTime())
+        {
+            SceneManager.LoadScene("popupIntro", LoadSceneMode.Additive);
+        }
+
 
         FindObjectOfType<DataController>().SaveGameData();
 

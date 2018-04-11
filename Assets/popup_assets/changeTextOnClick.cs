@@ -21,7 +21,10 @@ public class changeTextOnClick : MonoBehaviour {
 		if(GameObject.Find("msg_I_2").GetComponent<Text>().enabled == true){
 			// SceneManager.LoadScene(scene);
 			Debug.Log("Should now close this popup and display overworld");
-		}
+            FindObjectOfType<DataController>().read_tutorial();
+            SceneManager.UnloadSceneAsync("popupIntro");
+
+        }
 		else {
 			GameObject.Find("msg_I_1").GetComponent<Text>().enabled = false;
 			GameObject.Find("msg_I_2").GetComponent<Text>().enabled = true;

@@ -9,6 +9,9 @@ public class Scene_controller : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+
+        /*
+        Debug.Log("Scene_controller: start of camera adjustments");
         // set the desired aspect ratio (the values in this example are
         // hard-coded for 16:9, but you could make them into public
         // variables instead so you can set them at design time)
@@ -16,7 +19,7 @@ public class Scene_controller : MonoBehaviour {
 
         // determine the game window's current aspect ratio
         float windowaspect = (float)Screen.width / (float)Screen.height;
-
+        Debug.Log("Scene_controller: windowaspect = " + windowaspect);
         // current viewport height should be scaled by this amount
         float scaleheight = windowaspect / targetaspect;
 
@@ -48,6 +51,10 @@ public class Scene_controller : MonoBehaviour {
 
             camera.rect = rect;
         }
+        Debug.Log("Scene_controller: matrix transformation complete");
+        */
+		
+		Screen.SetResolution(900,1800, true);
     }
 
 
